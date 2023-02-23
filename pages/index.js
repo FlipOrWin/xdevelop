@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
 import { useState, useEffect } from 'react'
@@ -8,7 +6,6 @@ import { Button, Card } from '@mui/material'
 import Cookies from 'universal-cookie'
 import axios from 'axios'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
@@ -32,7 +29,6 @@ export default function Home() {
       if (err) {
         console.log(response)
       } else{
-        console.log(response.data, "premios")
         setQueSonPremios(response.data)
       }
     }
@@ -52,7 +48,6 @@ export default function Home() {
       if (err) {
         console.log(response)
       } else{
-        console.log(response.data, "categorias")
         setCategorias(response.data)
       }
     }
@@ -72,7 +67,6 @@ export default function Home() {
       if (err) {
         console.log(response)
       } else{
-        console.log(response.data, "jueces")
         setJueces(response.data)
       }
     }
@@ -156,7 +150,7 @@ export default function Home() {
               </p>
             </div>
             <div className="col-6">
-            Para mas información entra <a href={queSonPremios.link} class="text-primary">aquí</a>
+            Para mas información entra <a href={queSonPremios.link} className="text-primary">aquí</a>
             </div>
           </div>
         </Card>
@@ -197,7 +191,7 @@ export default function Home() {
               </p>
             </div>
             <div className="col">
-              Para mas información entra <a href={categorias.link} class="text-primary">aquí</a>
+              Para mas información entra <a href={categorias.link} className="text-primary">aquí</a>
             <h3>
             </h3>
             </div>
@@ -227,7 +221,7 @@ export default function Home() {
               </p>
             </div>
             <div className="col">
-              Para mas información entra <a href={jueces.link} class="text-primary">aquí</a>
+              Para mas información entra <a href={jueces.link} className="text-primary">aquí</a>
             <h3>
             </h3>
             </div>

@@ -1,4 +1,3 @@
-import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Container from '@mui/material/Container'
 import { TextField, Button, Card } from '@mui/material'
@@ -6,7 +5,6 @@ import { useState } from 'react'
 import axios from 'axios'
 import Cookies from 'universal-cookie'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Login() {
   
@@ -20,12 +18,10 @@ export default function Login() {
   const handleChange = (e) => {
     e.preventDefault();
     const ExpRegEmail=/^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/
-    console.log(e.target.value, e.target.name)
     if(e.target.name === 'username'){
       if(ExpRegEmail.test(e.target.value)){
         setEmailValidation(false)
       } else {
-        console.log('bademail')
         setEmailValidation(true)
       }
     } 
@@ -34,12 +30,10 @@ export default function Login() {
       ...credentials,
       [e.target.name]: e.target.value
     })
-    console.log(credentials)
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(credentials)
     let err = false
     let response = null
     try {
@@ -54,8 +48,6 @@ export default function Login() {
     if (err) {
       return <span>Caught an error.</span>;
     } else{
-      console.log(response)
-      console.log(response.data.data, "cookie")
       const cookies = new Cookies();
       cookies.set('token', response.data.data.token, {path: '/'});
       window.location.replace('/')
