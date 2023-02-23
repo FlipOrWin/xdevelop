@@ -7,6 +7,39 @@
   min-height: 100vh;
 }
 
+.tittle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+.littletop {
+  margin-top: 10px;
+}
+
+.marginbutton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.textRed {
+  color: red;
+}
+
+.textGreen {
+  color: green;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background-color: blanchedalmond;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
